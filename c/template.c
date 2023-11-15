@@ -20,9 +20,15 @@
 #include <sys/msg.h>
 #include <sys/xattr.h>      /* definition of fuction xattr.h */
 
+#define RED_TEXT     "\x1B[31m"
+#define GREEN_TEXT   "\x1B[32m"
+#define YELLOW_TEXT  "\x1B[33m"
+#define RESET_COLOR  "\x1B[0m"
+
 size_t usr_cs, usr_rflags, usr_rsp, usr_ss;
 void save_status(){
-    __asm__("mov usr_cs, cs;"
+    __asm__(
+        "mov usr_cs, cs;"
         "pushf;"
         "pop usr_rflags;"
         "mov usr_rsp, rsp;"
