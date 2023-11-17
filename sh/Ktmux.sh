@@ -2,7 +2,7 @@
 #
 # Script Name: Ktmux.sh
 # Author: Loora1N
-# Update Date: 2023-11-15
+# Update Date: 2023-11-17
 # Version: 0.8
 # Description: This script is designed for running qemu-system and gdb in tmux
 

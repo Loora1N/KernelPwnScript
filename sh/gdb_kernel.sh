@@ -2,7 +2,7 @@
 #
 # Script Name: unfile.sh
 # Author: Loora1N
-# Update Date: 2023-11-15
+# Update Date: 2023-11-17
 # Version: 0.7
 # Description: This script is designed for gdb kernel
 
