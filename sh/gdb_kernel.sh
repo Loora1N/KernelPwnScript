@@ -38,4 +38,6 @@ if [ "$symbol_flag" = true ]; then
     gdb_cmd+=" -ex 'add-symbol-file $path $offset'"
 fi
 
+#保证运行
+gdb_cmd+=" -ex c"
 eval "$gdb_cmd"
