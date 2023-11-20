@@ -19,4 +19,5 @@
 
 演示视频
 
-https://github.com/Loora1N/KernelPwnScript/assets/102774816/4571abda-063a-4bec-b4f7-4e3d3ca973fb
+https://github.com/Loora1N/KernelPwnScript/assets/102774816/ffeec649-5c81-4575-96ad-b45ae719d5ad
+
