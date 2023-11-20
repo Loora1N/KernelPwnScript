@@ -28,7 +28,9 @@
 - offset: 驱动载入偏移
 - session_name: tmux session名称，一般默认即可
 
-> 如不清楚sh脚本相对路径设置方式，可以直接使用绝对路径
+**注意：**
+- **如不清楚sh脚本相对路径设置方式，可以直接使用绝对路径；**
+- **若需要`-enable-kvm`参数，请直接root权限运行脚本，例`sudo ./Ktmux.sh`**
 
 ### 演示视频
 https://user-images.githubusercontent.com/102774816/284119790-1c3d6ff7-bfd5-42f8-ac58-06901766c022.mp4
