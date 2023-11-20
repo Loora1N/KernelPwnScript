@@ -15,9 +15,7 @@
 
 新增`Ktmux.sh`,可以使用该脚本在tmux中调试kernel，即运行`qemu-system`和`gdb`
 
-### Ktmux.sh
-
-演示视频
+### Ktmux.sh演示视频
 
 https://user-images.githubusercontent.com/102774816/284119790-1c3d6ff7-bfd5-42f8-ac58-06901766c022.mp4
 
