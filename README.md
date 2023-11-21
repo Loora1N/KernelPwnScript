@@ -11,9 +11,9 @@
 
 ## Shell
 
-包含文件系统解包、打包，gdb调试以及extract-vmlinux
+包含文件系统解包、打包，gdb调试，extract-vmlinux，get_gadget等等.
 
-新增`Ktmux.sh`,可以使用该脚本在tmux中调试kernel，即运行`qemu-system`和`gdb`
+~~新增`Ktmux.sh`,可以使用该脚本在tmux中调试kernel，即运行`qemu-system`和`gdb`~~
 
 ### Ktmux.sh
 
