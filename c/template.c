@@ -22,18 +22,20 @@
 
 #define RED_TEXT     "\x1B[31m"
 #define GREEN_TEXT   "\x1B[32m"
-#define YELLOW_TEXT  "\x1B[33m"
+#define BULE_TEXT  "\x1B[34m\x1B[1m"
 #define RESET_COLOR  "\x1B[0m"
 
-size_t usr_cs, usr_rflags, usr_rsp, usr_ss;
-void save_status(){
-    __asm__(
-        "mov usr_cs, cs;"
-        "pushf;"
-        "pop usr_rflags;"
-        "mov usr_rsp, rsp;"
-        "mov usr_ss, ss;"
-    );
+size_t user_cs, user_ss, user_rflags, user_sp;
+
+void save_status(void)
+{
+    __asm__("mov user_cs, cs;"
+            "mov user_ss, ss;"
+            "mov user_sp, rsp;"
+            "pushf;"
+            "pop user_rflags;"
+            );
+    printf("\033[34m\033[1m[*] Status has been saved.\033[0m\n");
 }
 
 void info_log(char* str){
@@ -69,6 +71,14 @@ size_t direct_map = 0xffff888000000000; //  stop at ffffc88000000000
 int main()
 {
     save_status();
+
+    printf(BULE_TEXT "[*] Opening dev...\n" RESET_COLOR);
+
+    fd = open("/dev/kgadget", O_RDWR);
+    if(fd < 0) {
+        printf(RED_TEXT "[x] Failed to open dev!\n" RESET_COLOR);
+        exit(1);
+    }
     
     return 0;
 }
