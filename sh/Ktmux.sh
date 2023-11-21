@@ -3,16 +3,16 @@
 # Script Name: Ktmux.sh
 # Author: Loora1N
 # Update Date: 2023-11-17
-# Version: 0.8
+# Version: 1.0
 # Description: This script is designed for running qemu-system and gdb in tmux
 
 
 
-cmd_qemu="./run.sh" #qemu-system script
+cmd_qemu="./boot.sh" #qemu-system script
 cmd_gdb="../KernelPwnScript/sh/gdb_kernel.sh" #gdb-kernel script
-vmlinux="./vmliunx"
-symbol="./fs/xxx.ko"
-offset=0xfffffffff     # offset of xxx.ko, for gdb add-symbol-file
+vmlinux="./vmlinux"
+symbol="./fs/lib/modules/4.4.72/babydriver.ko"
+offset=0xffffffffc0000000    # offset of xxx.ko, for gdb add-symbol-file
 session_name="KernelSession" #session name
 
 usage () {
