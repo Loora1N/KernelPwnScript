@@ -8,11 +8,11 @@
 
 
 
-cmd_qemu="./boot.sh" #qemu-system script
+cmd_qemu="./run.sh" #qemu-system script
 cmd_gdb="../KernelPwnScript/sh/gdb_kernel.sh" #gdb-kernel script
 vmlinux="./vmlinux"
-symbol="./fs/lib/modules/4.4.72/babydriver.ko"
-offset=0xffffffffc0000000    # offset of xxx.ko, for gdb add-symbol-file
+symbol="./fs/rwctf.ko"
+offset=0xffffffffc0000000   # offset of xxx.ko, for gdb add-symbol-file
 session_name="KernelSession" #session name
 
 usage () {

